@@ -7,7 +7,7 @@ const getBaseURL = () => {
     return 'http://localhost:5000/api/';
   }
   // Otherwise, default to production endpoint or fallback relative to host
-  return 'https://candidate-shortlisti.onrender.com/api/';
+  return 'https://ai-complaint-management-tnze.onrender.com/api/';
 };
 
 const API = axios.create({
