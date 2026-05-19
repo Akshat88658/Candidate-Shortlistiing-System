@@ -3,9 +3,9 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
 
-const candidateRoutes = require('./routes/candidates');
-const matchRoutes = require('./routes/match');
-const aiRoutes = require('./routes/ai');
+const authRoutes = require('./routes/auth');
+const complaintRoutes = require('./routes/complaints');
+const { router: aiRoutes } = require('./routes/ai');
 
 const app = express();
 
@@ -14,8 +14,8 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.use('/api/candidates', candidateRoutes);
-app.use('/api/match', matchRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/complaints', complaintRoutes);
 app.use('/api/ai', aiRoutes);
 
 // Health check
